@@ -1,0 +1,164 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Secular+One&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #080705;
+  color: white;
+}
+
+.coin-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px;
+  color: black;
+}
+
+.coin-search {
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  color: #1a1a1c;
+}
+
+.coin-text {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.coin-input {
+  padding-left: 16px;
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+  border: 10px black;
+  background-color: orange;
+  color: #1a1a1c;
+  font-size: larger;
+}
+
+.coin-input::placeholder {
+  color: black;
+  font-size: large;
+}
+
+/* for Coin js */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 10px;
+  grid-gap: 50px;
+  background-color: #2196f3;
+  padding: 20px;
+}
+
+.coin-container {
+  display: flex;
+  justify-content: center;
+}
+
+.coin-row,
+.coin-row-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #d7d7d7;
+  width: 970px;
+}
+
+.coin {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 24px;
+
+  min-width: 200px;
+}
+
+.coin h1 {
+  font-size: 16px;
+  width: 190px;
+}
+
+.coin img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.coin-symbol {
+  text-transform: uppercase;
+}
+
+.coin-data {
+  display: flex;
+  text-align: right;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.coin-price {
+  width: 110px;
+}
+
+.coin-volume {
+  width: 145px;
+}
+
+.coin-mkp {
+  width: 220px;
+}
+
+.coin-percent-white {
+  color: #1fff80;
+}
+
+.coin-percent-black {
+  color: red;
+}
+
+#react-paginate ul {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#react-paginate li {
+  display: inline-block;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+}
+
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #6c7ac9;
+  color: #6c7ac9;
+}
+
+.pagination__link {
+  font-weight: bold;
+}
+
+.pagination__link--active a {
+  color: #fff;
+  background: #6c7ac9;
+}
+
+.pagination__link--disabled a {
+  color: rgb(198, 197, 202);
+  border: 1px solid rgb(198, 197, 202);
+}
