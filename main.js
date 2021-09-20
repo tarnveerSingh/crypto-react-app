@@ -7,12 +7,28 @@ import TrendingPage from './pages/trendingPage';
 function App() {
   return (
     <Router>
+      {/* <div class="button-7">
+    <div class="eff-7"></div>
+    <a href="#"> Touch me </a>
+  </div> */}
       <div className="coin-app">
         <div className="wrapper">
-          <button className="button">
+          <button
+            className="button"
+            style={{
+              fontSize: '35px',
+              margin: '0px 100px 15px 100px',
+            }}
+          >
             <Link to={'/'}>Home</Link>
           </button>
-          <button className="button">
+          <button
+            className="button"
+            style={{
+              fontSize: '35px',
+              margin: '0px 100px 0 100px',
+            }}
+          >
             <Link to={'/trending'}>Trending</Link>
           </button>
         </div>
