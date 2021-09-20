@@ -1,5 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Secular+One&display=swap'); */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,24 +10,35 @@
   background-color: #080705;
   color: white;
 }
+a{
+  font-family: 'Courier New', sans-serif;
+  text-decoration: dotted;
+  background: #080705;
+  
+  
+}
 
 .coin-app {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 64px;
+  margin-top: 3px;
   color: black;
 }
 
 .coin-search {
-  margin-bottom: 64px;
+  margin-bottom: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   color: #1a1a1c;
 }
-
+form{
+  
+  text-align: center;
+}
 .coin-text {
   margin-bottom: 32px;
   text-align: center;
@@ -36,10 +49,11 @@
   width: 300px;
   height: 50px;
   border-radius: 4px;
-  border: 10px black;
+  border: 10px rgb(180, 56, 56);
   background-color: orange;
-  color: #1a1a1c;
-  font-size: larger;
+  color: #080808;
+  font-size: 27px;
+  
 }
 
 .coin-input::placeholder {
@@ -103,6 +117,7 @@
   text-align: right;
   justify-content: space-between;
   width: 100%;
+
 }
 
 .coin-price {
@@ -111,6 +126,7 @@
 
 .coin-volume {
   width: 145px;
+ 
 }
 
 .coin-mkp {
@@ -162,39 +178,85 @@
   color: rgb(198, 197, 202);
   border: 1px solid rgb(198, 197, 202);
 }
+/* tables */
+
+
+.table-container {
+  height: 1000px;
+  
+  overflow:auto;
+  margin: 40px 0 0 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 0px solid black;
+  text-align: left;
+  padding: 10px 6px 10px 6px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background:orange;
+  text-decoration-color: #080705;
+}
+
+
+/* Buttons */
 
 
 
 .wrapper {
-  padding: 1.5rem 0;
+  padding: 1rem 1rem;
   filter: url('#goo');
+  position: 'sticky',
+  /* margin-top:'fixed' */
+  /* top:fixed, */
 }
 
 .button {
   display: inline-block;
   text-align: center;
-  background: pink;
-  text-decoration:#1fff80;
-  font-weight: bold;
-  padding: 1.18em 1.32em 1.03em;
+  background:#F0E7D8 ;
+  text-decoration:none;
+  font-weight:lighter;
+  padding:0.6rem 0.6rem;
+  
+  
+  
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  
   line-height: 1;
   border-radius: 1em;
   position: relative;
-  min-width: 8.23em;
+  
   text-decoration: none;
   
-  font-size: 1.25rem;
+  font-size: 1px;
 }
 
 .button:before,
 .button:after {
-  width: 4.4em;
-  height: 2.95em;
+  width: 2em;
+  height: 2em;
   position: absolute;
   content: "";
+  /* color: violet; */
   display: inline-block;
-  background: white;
-  border-radius: 50%;
+  background: orange;
+  border-radius: 45%;
   transition: transform 1s ease;
   transform: scale(0);
   z-index: -1;
@@ -214,5 +276,4 @@
 .button:hover:after {
   transform: none;
 }
-
 
