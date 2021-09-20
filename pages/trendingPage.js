@@ -11,7 +11,7 @@ const TrendingPage = () => {
   const [color] = useState('orange');
   const [error, setError] = useState('');
   const [paginate, setPaginate] = useState(1);
-  const [limit] = useState(100);
+  const [limit] = useState(50);
 
   const onclick = (e) => {
     setSearch(e.target.value);
@@ -25,7 +25,7 @@ const TrendingPage = () => {
   );
 
   function handlePageClick({ selected: selectedPage }) {
-    setPaginate(selectedPage);
+    setPaginate(selectedPage + 1);
   }
 
   useEffect(() => {
@@ -53,13 +53,13 @@ const TrendingPage = () => {
   return (
     <div>
       <div className="coin-search">
-        <h1 className="coin-text">CRYPTO - Currency</h1>
+        <h1 className="coin-text">Trending - Based On Volume</h1>
         <form>
           <input
             className="coin-input"
             type="text"
             onChange={onclick}
-            placeholder="Enter to Search...."
+            placeholder="Enter..( NAME / SYMBOL )"
           />
         </form>
       </div>
@@ -68,7 +68,7 @@ const TrendingPage = () => {
         <ReactPaginate
           previousLabel={'← Previous'}
           nextLabel={'Next →'}
-          pageCount={20}
+          pageCount={10}
           onPageChange={handlePageClick}
           containerClassName={'pagination'}
           previousLinkClassName={'pagination__link'}
@@ -78,35 +78,59 @@ const TrendingPage = () => {
         />
       </div>
 
-      <div>
-        <div className="coin-row">
-          <div className="">Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-        </div>
-      </div>
-      {filteredCoins.map((coin) => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            price={coin.current_price}
-            symbol={coin.symbol}
-            mkp={coin.total_volume}
-            volume={coin.market_cap}
-            image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
-            priceChange24={coin.price_change_24h}
-          />
-        );
-      })}
+      <div className="table-container">
+        <table>
+          <div
+            style={{
+              background: '#007FFF',
+              height: '60px',
+              display: 'grid',
+              alignItems: 'center',
+              margin: 'auto',
+              maxWidth: '970px',
+              position: 'sticky',
+              top: 0,
 
-      {loading && <ClipLoader color={color} loading={loading} size={110} />}
-      {error && <div>{error}</div>}
+              justifyItems: 'center',
+
+              gridTemplateColumns: '126px 113px 154px 160px 160px 280px',
+            }}
+          >
+            <div style={{ background: 'transparent' }}>Coin</div>
+            <div style={{ background: 'transparent' }}>Symbol</div>
+            <div style={{ background: 'transparent' }}>Current Price</div>
+            <div style={{ background: 'transparent' }}>Price Change(24 hr)</div>
+            <div style={{ background: 'transparent' }}>TOTAL VOLUME</div>
+            <div style={{ background: 'transparent' }}>Market Cap</div>
+          </div>
+          {filteredCoins.map((coin) => {
+            return (
+              <Coin
+                key={coin.id}
+                name={coin.name}
+                symbol={coin.symbol}
+                price={coin.current_price}
+                mkp={coin.market_cap}
+                volume={coin.total_volume}
+                image={coin.image}
+                priceChange24={coin.price_change_24h}
+              />
+            );
+          })}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '3rem',
+            }}
+          >
+            {loading && (
+              <ClipLoader color={color} loading={loading} size={110} />
+            )}
+            {error && <div>{error}</div>}
+          </div>
+        </table>
+      </div>
     </div>
   );
 };
