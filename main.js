@@ -8,12 +8,14 @@ function App() {
   return (
     <Router>
       <div className="coin-app">
-        <button className="home-app">
-          <Link to={'/'}>Home</Link>
-        </button>
-        <button className="Trending-app">
-          <Link to={'/trending'}>Trending</Link>
-        </button>
+        <div className="wrapper">
+          <button className="button">
+            <Link to={'/'}>Home</Link>
+          </button>
+          <button className="button">
+            <Link to={'/trending'}>Trending</Link>
+          </button>
+        </div>
 
         <Switch>
           <Route exact path="/">
