@@ -11,7 +11,7 @@ const Index = () => {
   const [color] = useState('orange');
   const [error, setError] = useState('');
   const [paginate, setPaginate] = useState(1);
-  const [limit] = useState(100);
+  const [limit] = useState(50);
 
   const onclick = (e) => {
     setSearch(e.target.value);
@@ -19,13 +19,14 @@ const Index = () => {
 
   const filteredCoins = coins.filter(
     (coin) =>
-      // coin.name.toLowerCase() === search.toLowerCase() ||
+      coin.name.toLowerCase() === search.toLowerCase() ||
       coin.symbol.toLowerCase() === search.toLowerCase() ||
       coin.name.toLowerCase().includes(search.toLowerCase())
   );
 
   function handlePageClick({ selected: selectedPage }) {
-    setPaginate(selectedPage);
+    setPaginate(selectedPage + 1);
+    // console.log(selectedPage, 'this is the selected page');
   }
 
   useEffect(() => {
@@ -59,7 +60,7 @@ const Index = () => {
             className="coin-input"
             type="text"
             onChange={onclick}
-            placeholder="Enter to Search...."
+            placeholder="Enter..( NAME / SYMBOL )"
           />
         </form>
       </div>
@@ -68,7 +69,7 @@ const Index = () => {
         <ReactPaginate
           previousLabel={'← Previous'}
           nextLabel={'Next →'}
-          pageCount={20}
+          pageCount={10}
           onPageChange={handlePageClick}
           containerClassName={'pagination'}
           previousLinkClassName={'pagination__link'}
@@ -78,47 +79,70 @@ const Index = () => {
         />
       </div>
 
-      <div>
-        <div className="coin-row">
-          <div className="">Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-          <div>Curency name</div>
-        </div>
+      <div className="table-container">
+        <table>
+          <div
+            style={{
+              position: 'sticky',
+              // position: '-webkit-sticky',
+
+              // position: '-webkit-sticky',
+              top: '0',
+              background: '#007FFF',
+              height: '60px',
+              display: 'grid',
+              alignItems: 'center',
+              margin: '',
+              maxWidth: '970px',
+              justifyItems: 'center',
+              border: '2px',
+
+              gridTemplateColumns: '125px 100px 132px 102px 123px 158px 245px',
+            }}
+          >
+            <div style={{ background: 'transparent' }}>Coin</div>
+            <div style={{ background: 'transparent' }}>Symbol</div>
+            <div style={{ background: 'transparent' }}>Current Price</div>
+            <div style={{ background: 'transparent' }}>
+              Last 24 (In Percentage)
+            </div>
+            <div style={{ background: 'transparent' }}>
+              Last 24 Hrs (In AUD$)
+            </div>
+            <div style={{ background: 'transparent' }}>Total Volume</div>
+            <div style={{ background: 'transparent' }}>Market Cap</div>
+          </div>
+
+          {filteredCoins.map((coin) => {
+            return (
+              <Coin
+                key={coin.id}
+                name={coin.name}
+                price={coin.current_price}
+                symbol={coin.symbol}
+                mkp={coin.market_cap}
+                volume={coin.total_volume}
+                image={coin.image}
+                priceChange={coin.price_change_percentage_24h}
+                priceChange24={coin.price_change_24h}
+              />
+            );
+          })}
+
+          {loading && (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginTop: '3rem',
+              }}
+            >
+              <ClipLoader color={color} loading={true} size={110} />
+            </div>
+          )}
+          {error && <div>{error}</div>}
+        </table>
       </div>
-      {filteredCoins.map((coin) => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            price={coin.current_price}
-            symbol={coin.symbol}
-            mkp={coin.total_volume}
-            volume={coin.market_cap}
-            image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
-            priceChange24={coin.price_change_24h}
-          />
-        );
-      })}
-
-      {/* {loading && (<ClipLoader color={color} loading={loading} size={110} />}) */}
-
-      {loading && (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '3rem',
-          }}
-        >
-          <ClipLoader color={color} loading={true} size={110} />
-        </div>
-      )}
-      {error && <div>{error}</div>}
     </div>
   );
 };
