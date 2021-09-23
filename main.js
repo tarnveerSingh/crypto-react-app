@@ -2,6 +2,7 @@ import React from 'react';
 import './main.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import IndexPage from './pages/IndexPage';
+
 import TrendingPage from './pages/trendingPage';
 
 function App() {
