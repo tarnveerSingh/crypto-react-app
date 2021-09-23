@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import IndexPage from './pages/IndexPage';
 
 test('renders learn react link', () => {
-  render(<App />);
+  render(<Index />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
