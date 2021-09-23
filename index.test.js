@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-undef
 
 import { render, screen } from '@testing-library/react';
-import  from './App';
+import IndexPage from './pages/IndexPage';
 
 test('renders learn react link', () => {
   render(<App />);
