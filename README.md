@@ -19,6 +19,21 @@ These instructions will help you get a copy of the project running on your local
 1.  **Clone the repository:**
 
 ```bash
-git clone [https://github.com/tarnveerSingh/crypto-react-app](https://github.com/tarnveerSingh/crypto-react-app)
+git clone https://github.com/tarnveerSingh/crypto-react-app
+```
+
+2.  **Install dependencies:**
+
+```bash
+cd crypto-react-app
+npm install
+```
+
+3. **Start the development server:**
+
+```bash
+npm start
+```
+
 
 
