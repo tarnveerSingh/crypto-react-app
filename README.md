@@ -1,5 +1,17 @@
-# crypto-react-app
+Cryptocurrency Tracker App - Live  Website: - https://fervent-bassi-43a01a.netlify.app/
 
-Please Note:- Scroll Down a bit further, as it's a TABLE with a sticky header. There are total 50 items fetched at each page. 
+This React app displays real-time data on cryptocurrencies, fetched from the CoinGecko API. It features a user-friendly interface with search functionality, allowing users to filter coins by name or symbol, and pagination for easy navigation through extensive datasets.  The app provides two views:
 
- Live  Website: - https://fervent-bassi-43a01a.netlify.app/
+Index: Displays cryptocurrencies ordered by market capitalization.
+Trending: Shows cryptocurrencies ordered by trading volume.
+
+Getting Started
+These instructions will help you get a copy of the project running on your local machine for development and testing.
+
+Prerequisites
+Node.js and npm (or yarn): Ensure you have Node.js and npm (or yarn) installed on your system. You can download them from https://nodejs.org/.
+
+Installing
+Clone the repository:
+
+
