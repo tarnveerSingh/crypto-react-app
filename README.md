@@ -34,6 +34,27 @@ npm install
 ```bash
 npm start
 ```
+This will open the app in your default browser (usually at http://localhost:3000)
 
+#Running the tests
+This project currently does not have automated tests.
+
+#Deployment
+To deploy the app to a live system, you can use services like Netlify, Vercel, or GitHub Pages. Follow their specific instructions for deployment.
+
+#Built With
+React: A JavaScript library for building user interfaces.
+React Router: For handling navigation and routing in the app.
+Axios: For making API requests to fetch cryptocurrency data.
+CoinGecko API: Provides the cryptocurrency data.
+React Spinners: For displaying loading indicators.
+React Paginate: For pagination controls.
+CSS (main.css): For styling the components.
+
+#Contributing
+Please feel free to fork this repository and submit pull requests with improvements or new features.
+
+### License
+This project is licensed under the [MIT License](LICENSE).
 
 
