@@ -5,14 +5,19 @@ This React app displays real-time data on cryptocurrencies, fetched from the Coi
 Index: Displays cryptocurrencies ordered by market capitalization.
 Trending: Shows cryptocurrencies ordered by trading volume.
 
-Getting Started
+# Getting Started
+
 These instructions will help you get a copy of the project running on your local machine for development and testing.
 
-Prerequisites
-Node.js and npm (or yarn): Ensure you have Node.js and npm (or yarn) installed on your system. You can download them from https://nodejs.org/.
+## Prerequisites
 
-Installing
-Clone the repository:
+*   Node.js and npm (or yarn): Ensure you have Node.js and npm (or yarn) installed on your system. You can download them from https://nodejs.org/.
 
-# git clone https://github.com/tarnveerSingh/crypto-react-app
+## Installing
+
+1.  **Clone the repository:**
+
+```bash
+git clone [https://github.com/tarnveerSingh/crypto-react-app](https://github.com/tarnveerSingh/crypto-react-app)
+
 
