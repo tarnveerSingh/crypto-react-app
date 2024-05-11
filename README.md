@@ -2,8 +2,9 @@ Cryptocurrency Tracker App - Live  Website: - https://fervent-bassi-43a01a.netli
 
 This React app displays real-time data on cryptocurrencies, fetched from the CoinGecko API. It features a user-friendly interface with search functionality, allowing users to filter coins by name or symbol, and pagination for easy navigation through extensive datasets.  The app provides two views:
 
-Index: Displays cryptocurrencies ordered by market capitalization.
-Trending: Shows cryptocurrencies ordered by trading volume.
+1. Index: Displays cryptocurrencies ordered by market capitalization.
+
+2. Trending: Shows cryptocurrencies ordered by trading volume.
 
 # Getting Started
 
