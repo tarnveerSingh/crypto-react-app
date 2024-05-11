@@ -14,4 +14,5 @@ Node.js and npm (or yarn): Ensure you have Node.js and npm (or yarn) installed o
 Installing
 Clone the repository:
 
+# git clone https://github.com/tarnveerSingh/crypto-react-app
 
